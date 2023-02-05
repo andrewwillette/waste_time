@@ -16,6 +16,8 @@ fn open_url(url: &str) {
 fn select_website() -> String {
     let wasted_time_urls = vec![
         "linkedin.com".to_string(),
+        "github.com".to_string(),
+        "reddit.com".to_string(),
         "twitter.com".to_string(),
         "instagram.com".to_string(),
         "google.com".to_string(),
