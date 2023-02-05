@@ -1,0 +1,8 @@
+[package]
+name = "waste_time"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+open = "3.2.0"
+rust_fzf = "0.1.0"
