@@ -2,17 +2,21 @@ use rust_fzf::fzf_select;
 use std::process::Command;
 
 fn main() {
-    let selection_https_prepended = get_website_to_open();
-
+    let selection_https_prepended = select_website();
     print!("{}", selection_https_prepended);
+
+    open_url(&selection_https_prepended);
+}
+
+fn open_url(url: &str) {
+    print!("{}", url);
     let _child = Command::new("open")
-        .arg(selection_https_prepended)
-        // .arg("https://linkedin.com")
+        .arg(url)
         .spawn()
         .expect("open call failed");
 }
 
-fn get_website_to_open() -> String {
+fn select_website() -> String {
     let wasted_time_urls = vec![
         "linkedin.com".to_string(),
         "twitter.com".to_string(),
