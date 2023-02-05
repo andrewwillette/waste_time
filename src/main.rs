@@ -3,13 +3,10 @@ use std::process::Command;
 
 fn main() {
     let selection_https_prepended = select_website();
-    print!("{}", selection_https_prepended);
-
     open_url(&selection_https_prepended);
 }
 
 fn open_url(url: &str) {
-    print!("{}", url);
     let _child = Command::new("open")
         .arg(url)
         .spawn()
